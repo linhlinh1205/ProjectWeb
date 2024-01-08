@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ultraneaker93</title>
+    <link rel="stylesheet" type="text/css" href="file/style.css">
+    <link rel="stylesheet" type="text/html" href="Nike.html">
+    <link rel="stylesheet" type="text/html" href="Adidas.html">
+    <link rel="stylesheet" type="text/html" href="MLB.html">
+    <link rel="stylesheet" type="text/html" href="Converse.html">
+    <link rel="stylesheet" type="text/html" href="Vans.html">
+    <link rel="stylesheet" type="text/html" href="Tintuc.html">
+    <script type=”text/javascript” href="script.js"></script>
+    <link rel="stylesheet" type="text/html" href="nike1.html">
+    <link rel="stylesheet" type="text/html" href="nike2.html">
+    <link rel="stylesheet" type="text/html" href="nike3.html">
+    <link rel="stylesheet" type="text/html" href="nike4.html">
+    <link rel="stylesheet" type="text/html" href="nike5.html">
+    <link rel="stylesheet" type="text/html" href="nike6.html">
+    <link rel="stylesheet" type="text/html" href="mlb1.html">
+    <link rel="stylesheet" type="text/html" href="mlb2.html">
+    <link rel="stylesheet" type="text/html" href="con1.html">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a herf="index.html">
+                <img src="image/logo.png" alt="Trang chủ"/></a>
+            <div id="loginbutton">
+                <a href="login/login.html"><button>Đăng nhập</button></a>
+            </div>
+            <div id="registerbutton">
+                <a href="register.html"><button>Đăng ký</button></a>
+            </div>
+            <div class="search">
+                <center>
+                    <input type="text" placeholder="Bạn cần tìm sản phẩm nào....." name="search">
+                    <button>Tìm kiếm</button>
+                </center>
+            </div>
+        </div>
+
+        <div class="topnav">
+            <a href="index.html"><img src="image/home.png"> TRANG CHỦ</a>
+            <a href="dm.html">DANH MỤC</a>
+            <a href="Nike.html"><img src="image/nike.png"> NIKE</a>
+            <a href="Adidas.html"><img src="image/adidas.png"> ADIDAS</a>
+            <a href="MLB.html"><img src="image/mlb.png"> MLB</a>
+            <a href="Converse.html"><img src="image/converse.png"> CONVERSE</a>
+            <a href="Vans.html"><img src="image/vans.png"> VANS</a>
+            <a href="Tintuc.html">TIN TỨC</a>
+            <a href="#"><img src="image/icon1.png"> GIỎ HÀNG</a>
+        </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sortSelect = document.getElementById('sort');
+    const salesTable = document.getElementById('salesTable');
+    const grandTotalElement = document.getElementById('grandTotal');
+
+    const updateTotals = () => {
+        let grandTotal = 0;
+        const rows = salesTable.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            const price = parseFloat(row.querySelector('.price').textContent);
+            const quantityInput = row.querySelector('.quantity');
+            const totalElement = row.querySelector('.total');
+
+            if (checkbox.checked) {
+                const quantity = parseInt(quantityInput.value);
+                const total = price * quantity;
+                totalElement.textContent = total.toFixed(2);
+                grandTotal += total;
+                quantityInput.disabled = false;
+            } else {
+                totalElement.textContent = '0';
+                quantityInput.value = '1';
+                quantityInput.disabled = true;
+            }
+        });
+
+        grandTotalElement.textContent = grandTotal.toFixed(2);
+    };
+
+    const updateTotalForRow = (row) => {
+        const price = parseFloat(row.querySelector('.price').textContent);
+        const quantityInput = row.querySelector('.quantity');
+        const totalElement = row.querySelector('.total');
+
+        const quantity = parseInt(quantityInput.value);
+        const total = price * quantity;
+        totalElement.textContent = total.toFixed(2);
+
+        updateTotals();
+    };
+
+    sortSelect.addEventListener('change', () => {
+        const sortOrder = sortSelect.value;
+        const rows = Array.from(salesTable.querySelectorAll('tbody tr'));
+
+        rows.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector('.price').textContent);
+            const priceB = parseFloat(b.querySelector('.price').textContent);
+
+            if (sortOrder === 'tc') {
+                return priceA - priceB;
+            } else {
+                return priceB - priceA;
+            }
+        });
+
+        rows.forEach(row => salesTable.querySelector('tbody').appendChild(row));
+        updateTotals();
+    });
+
+    salesTable.addEventListener('input', (event) => {
+        const target = event.target;
+        if (target.matches('.quantity')) {
+            const row = target.closest('tr');
+            updateTotalForRow(row);
+        }
+    });
+
+    salesTable.addEventListener('change', (event) => {
+        const target = event.target;
+        if (target.matches('input[type="checkbox"]')) {
+            const row = target.closest('tr');
+            updateTotalForRow(row);
+        }
+    });
+
+    updateTotals();
+});
+  </script>
+  <style>
+#sort{
+    height: 30px;
+    font-size: large;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+tfoot td {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+.total{
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+  </style>
+<body>
+  <label for="sort">Mức giá:</label>
+  <select id="sort">
+    <option value="tc">Từ thấp đến cao</option>
+    <option value="ct">Từ cao xuống thấp</option>
+  </select>
+
+  <table id="salesTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Sản phẩm</th>
+        <th>Đơn Giá</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>AIR FORCE 1 WHITE</td>
+        <td class="price">750000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>TRAVIS SCOTT X LOW</td>
+        <td class="price">1300000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>JORDAN 1 RETRO HIGH</td>
+        <td class="price">1500000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>AIR FORCE 1 GRAY</td>
+        <td class="price">700000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>AIR FORCE 1 MULTICOLOR</td>
+        <td class="price">2300000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>JORDAN 4 RETRO MILITARY </td>
+        <td class="price">900000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>MLB BIGBALL MONOHEEL</td>
+        <td class="price">1500000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>MLB CHUNKY LINER</td>
+        <td class="price">1100000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>CONVERSE RUN STAR MOTION</td>
+        <td class="price">800000</td>
+        <td><input type="number" class="quantity" value="1"></td>
+        <td class="total"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" style="text-align: center;">Tổng tiền:</td>
+        <td id="grandTotal">0</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

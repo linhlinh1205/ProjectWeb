@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ultraneaker93</title>
+    <link rel="stylesheet" type="text/css" href="file/style.css">
+    <link rel="stylesheet" type="text/html" href="Nike.html">
+    <link rel="stylesheet" type="text/html" href="Adidas.html">
+    <link rel="stylesheet" type="text/html" href="MLB.html">
+    <link rel="stylesheet" type="text/html" href="Converse.html">
+    <link rel="stylesheet" type="text/html" href="Vans.html">
+    <link rel="stylesheet" type="text/html" href="Tintuc.html">
+    <script type=”text/javascript” href="script.js"></script>
+    <link rel="stylesheet" type="text/html" href="nike1.html">
+    <link rel="stylesheet" type="text/html" href="nike2.html">
+    <link rel="stylesheet" type="text/html" href="nike3.html">
+    <link rel="stylesheet" type="text/html" href="nike4.html">
+    <link rel="stylesheet" type="text/html" href="nike5.html">
+    <link rel="stylesheet" type="text/html" href="nike6.html">
+    <link rel="stylesheet" type="text/html" href="mlb1.html">
+    <link rel="stylesheet" type="text/html" href="mlb2.html">
+    <link rel="stylesheet" type="text/html" href="con1.html">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a herf="index.html">
+                <img src="image/logo.png" alt="Trang chủ"/></a>
+            <div id="loginbutton">
+                <a href="login/login.html"><button>Đăng nhập</button></a>
+            </div>
+            <div id="registerbutton">
+                <a href="register.html"><button>Đăng ký</button></a>
+            </div>
+            <div class="search">
+                <center>
+                    <input type="text" placeholder="Bạn cần tìm sản phẩm nào....." name="search">
+                    <button>Tìm kiếm</button>
+                </center>
+            </div>
+        </div>
+
+        <div class="topnav">
+            <a href="index.html"><img src="image/home.png"> TRANG CHỦ</a>
+            <a href="dm.html">DANH MỤC</a>
+            <a href="Nike.html"><img src="image/nike.png"> NIKE</a>
+            <a href="Adidas.html"><img src="image/adidas.png"> ADIDAS</a>
+            <a href="MLB.html"><img src="image/mlb.png"> MLB</a>
+            <a href="Converse.html"><img src="image/converse.png"> CONVERSE</a>
+            <a href="Vans.html"><img src="image/vans.png"> VANS</a>
+            <a href="Tintuc.html">TIN TỨC</a>
+            <a href="#"><img src="image/icon1.png"> GIỎ HÀNG</a>
+        </div>
+        
+        <div class="content">
+            <h1 class="changing-text"></h1>
+            <div class="slide-container">
+              <div class="slides">
+                <div class="slide">
+                  <img src="image/slide.png" alt="Image 1">
+                </div>
+                <div class="slide">
+                  <img src="imgadidas/adidas-Yeezy-Boost-350.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                  <img src="imgadidas/Adidas Eqt.jpg" alt="Image 3">
+                </div>
+                <div class="slide">
+                  <img src="imgnike/giay-nike-air-jordan-1-low-beaded-swoosh.png" alt="Image 4">
+                </div>
+                <div class="slide">
+                  <img src="imgcon/Converse Dior B23 Low.png" alt="Image 5">
+                </div>
+                <div class="slide">
+                  <img src="imgmlb/MLB Bigball Chunky High New York.jpg" alt="Image 6">
+                </div>
+                <div class="slide">
+                  <img src="imgadidas/Adidas Prophere.jpg" alt="Image 7">
+                </div>
+              </div>
+              <button  class="prev-button">&#8592;</button>
+              <button class="next-button">&#8594;</button>
+            </div>
+            <div style="text-align: center;font-weight:lighter;" id="imageCount"></div>
+          </div>
+          <script>
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+            const imageCountElement = document.getElementById('imageCount');
+            let currentSlide = 0;
+  
+            function showSlide(n) {
+              slides[currentSlide].classList.remove('active');
+              currentSlide = (n + slides.length) % slides.length;
+              slides[currentSlide].classList.add('active');
+  
+              imageCountElement.textContent = "ẢNH : " + (currentSlide + 1) + "/" + slides.length;
+              imageCountElement.classList.add("bold-text"); 
+            }
+  
+            prevButton.addEventListener('click', () => {
+              showSlide(currentSlide - 1);
+            });
+  
+            nextButton.addEventListener('click', () => {
+              showSlide(currentSlide + 1);
+            });
+  
+            showSlide(currentSlide);
+          </script>
+      </div>
+    <div class="container section-title-container">
+        <h3 class="section-title section-title-center">
+            <b></b>
+            <center>
+                <span class="section-title-main">♡ SẢN PHẨM BÁN CHẠY ♡</span>
+            </center>
+            <b></b>
+        </h3>
+    </div>
+    <div class="sidebar">
+        <ul class="contact-list">
+            <li><a href="https://www.facebook.com/profile.php?id=100090037347775"><img src="image/face.png" alt="Messenger"></a></li>
+            <li><a href="https://chat.zalo.me/"><img src="image/zalo.png" alt="Zalo"></a></li>
+            <li><a href="#"><img src="image/phone.png" alt="Hotline"></a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+
+        <div class="image img1">
+            <a href="nike1.html">
+            <img src="image/Hot/N1.png" alt="Ảnh 1" width="200" height="200"></a>
+            <p>AIR FORCE 1 WHITE </p>
+            <span class="line-through">1,150,000đ</span>
+            <br>750,000đ<br>
+
+        </div>
+        <div class="image img2">
+            <a href="nike2.html">
+            <img src="image/Hot/N2.png" alt="Ảnh 2" width="200" height="200"></a>
+            <p>TRAVIS SCOTT X LOW</p>
+            <span class="line-through">2,500,000đ</span>
+            <br>1,300,000đ<br>
+
+        </div>
+        <div class="image img3">
+            <a href="nike3.html">
+            <img src="image/Hot/N3.png" alt="Ảnh 3" width="200" height="200"></a>
+            <p>JORDAN 1 RETRO HIGH</p>
+            <span class="line-through">2,800,000đ</span>
+            <br>1,500,000đ<br>
+
+        </div>
+        <div class="image">
+            <a href="nike4.html">
+            <img src="image/Hot/N5.png" alt="Ảnh 4" width="200" height="200"></a>
+            <p>AIR FORCE 1 GRAY</p>
+            <span class="line-through">950,000đ</span>
+            <br>700,000đ<br>
+        </div>
+        <div class="image img4">
+            <a href="nike5.html">
+            <img src="image/Hot/N4.png" alt="Ảnh 4" width="200" height="200"></a>
+            <p>AIR FORCE 1 MULTICOLOR</p>
+            <span class="line-through">3,500,000đ</span>
+            <br>2,300,000đ<br>
+
+        </div>
+        
+        <div class="image">
+            <a href="nike6.html">
+            <img src="image/Hot/N8.png" alt="Ảnh 6" width="200" height="200"></a>
+            <p>JORDAN 4 RETRO MILITARY</p>
+            <span class="line-through">1,800,000đ</span>
+            <br>900,000đ<br>
+        </div>
+        <div class="image">
+            <a href="mlb1.html">
+            <img src="image/Hot/N6.png" alt="Ảnh 7" width="200" height="200"></a>
+            <p>MLB BIGBALL MONOHEEL</p>
+            <span class="line-through">2,800,000đ</span>
+            <br>1,500,000đ<br>
+        </div>
+        <div class="image">
+            <a href="mlb2.html">
+            <img src="image/Hot/N7.png" alt="Ảnh 8" width="200" height="200"></a>
+            <p>MLB CHUNKY LINER</p>
+            <span class="line-through">1,900,000đ</span>
+            <br>1,100,000đ<br>
+        </div>
+        <div class="image">
+            <a href="con1.html">
+            <img src="image/Hot/N9.png" alt="Ảnh 9" width="200" height="200"></a>
+            <p>CONVERSE RUN STAR MOTION</p>
+            <span class="line-through">1,500,000đ</span>
+            <br>800,000đ<br>
+        </div>
+
+
+    </div>
+    <div class="star">
+        <center>
+            <span class=".">☆☆☆☆☆</span>
+        </center>
+    </div>
+    <div class="ship">
+        <a href="#">
+            <img src="image/ic1.png" alt="Giao hàng nhanh chóng">
+            <span>Giao hàng nhanh chóng ♡</span>
+        </a>
+        <a href="#">
+            <img src="image/ic2.png" alt="Mua hàng siêu tiết kiệm">
+            <span>Mua hàng siêu tiết kiệm ♡</span>
+        </a>
+        <a href="#">
+            <img src="image/ic3.png" alt="Hàng chuẩn Replica">
+            <span>Hàng chuẩn Replica ♡</span>
+        </a>
+    </div>
+
+</body>
+<footer class="footer" style="background-image: url('image/br.png');">
+    
+    <div class="footer-column">
+        <h4>GIỚI THIỆU</h4>
+        <p><a href="/gioi-thieu/"><span class="text">Về </span>chúng tôi</a></p>
+        <p><a href="/huong-dan-mua-hang/"><span class="text">Hướng dẫn mua hàng </span></a></p>
+        <p><a href="/chinh-sach-giao-hang/"><span class="text">Chính sách giao hàng </span></a></p>
+        <p><a href="/chinh-sach-doi-tra-hang/"><span class="text">Chính sách đổi trả </span></a></p>
+        <p><a href="/chinh-sach-bao-hanh/"><span class="text">Chính sách bảo hành </span></a></p>
+        <p><a href="/chinh-sach-bao-mat/"><span class="text">Chính sách bảo mật</span></a></p>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="footer-column">
+        <h5>THƯƠNG HIỆU</h5>
+        <p><a href="Nike.html"><span class="text"></span>Giày Nike</a></p>
+        <p><a href="Adidas.html"><span class="text">Giày Adidas</span></a></p>
+        <p><a href="MLB.html"><span class="text">Giày MLB </span></a></p>
+        <p><a href="Converse.html"><span class="text">Giày Converse </span></a></p>
+        <p><a href="Vans.html"><span class="text">Giày Vans </span></a></p>
+
+    </div>
+    <div class="vertical-line"></div>
+    <div class="footer-column">
+        <h6>THÔNG TIN</h6>
+        <li>Địa chỉ: 548 Phạm Văn Đồng, phường 13, quận Bình Thạnh, TP.HCM</li>
+        <li>Hotline: 0342902951</li>
+        <li>Website: www.ultrasneaker93.com</li>
+        <div id="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8514510784294!2d106.70158597573632!3d10.82267795833746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752910825c6ab9%3A0xa1b250dc696376cb!2zQ2h1bmcgQ8awIDU0OCBQaOG6oW0gVsSDbiDEkOG7k25n!5e0!3m2!1svi!2s!4v1688212549814!5m2!1svi!2s"></iframe>
+        </div>
+    </div>
+</footer>
+
+</html>

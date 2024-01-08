@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang chủ</title>
+    <style>
+        /* Thêm CSS cho form */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #00f8e3;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #757e75;
+        }
+        
+        
+    </style>
+    <script>
+        function showLogin() {
+            document.getElementById("login-container").style.display = "block";
+            document.getElementById("register-container").style.display = "none";
+        }
+
+        function showRegister() {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("register-container").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>ĐĂNG NHẬP</h2>
+        <form class="login-form">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Đăng nhập">
+        </form>
+    </div>
+</body>
+
+</html>

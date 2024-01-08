@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ultrasneaker93</title>
+    <link rel="stylesheet" type="text/css" href="file/style.css">
+    <link rel="stylesheet" type="text/html" href="Nike.html">
+    <link rel="stylesheet" type="text/html" href="Adidas.html">
+    <link rel="stylesheet" type="text/html" href="MLB.html">
+    <link rel="stylesheet" type="text/html" href="Converse.html">
+    <link rel="stylesheet" type="text/html" href="Vans.html">
+    <link rel="stylesheet" type="text/html" href="Tintuc.html">
+    <link rel="stylesheet" type="text/css" href="chitiet.css">
+    <link rel="stylesheet" type="text/html" href="index.html">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a herf="#"><img src="image/logo.png" alt=""></a>
+            <div id="loginbutton">
+                <a href="login/login.html"><button>Đăng nhập</button></a>
+            </div>
+            <div id="registerbutton">
+                <a href="register.html"><button>Đăng ký</button></a>
+            </div>
+            <div class="search">
+                <center>
+                    <input type="text" placeholder="Bạn cần tìm sản phẩm nào....." name="search">
+                    <button>Tìm kiếm</button>
+                </center>
+            </div>
+        </div>
+
+        <div class="topnav">
+            <a href="index.html"><img src="image/home.png"> TRANG CHỦ</a>
+            <a href="Nike.html"><img src="image/nike.png"> NIKE</a>
+            <a href="Adidas.html"><img src="image/adidas.png"> ADIDAS</a>
+            <a href="MLB.html"><img src="image/mlb.png"> MLB</a>
+            <a href="Converse.html"><img src="image/converse.png"> CONVERSE</a>
+            <a href="Vans.html"><img src="image/vans.png"> VANS</a>
+            <a href="Tintuc.html">TIN TỨC</a>
+            <a href="#"><img src="image/icon1.png"> GIỎ HÀNG</a>
+        </div>
+
+        <div id="slide">
+            <center>
+                <a herf="#"><img src="image/slide.png" alt=""></a>
+            </center>
+        </div>
+    </div>
+    <div class="container section-title-container">
+        <h3 class="section-title section-title-center">
+            <b></b>
+            <center>
+                <span class="section-title-main">♡ Nike ♡</span>
+            </center>
+            <b></b>
+        </h3>
+    </div>
+    <div class="sidebar">
+        <ul class="contact-list">
+            <li><a href="#"><img src="image/face.png" alt="Messenger"></a></li>
+            <li><a href="#"><img src="image/zalo.png" alt="Zalo"></a></li>
+            <li><a href="#"><img src="image/phone.png" alt="Hotline"></a></li>
+        </ul>
+    </div>
+    <div class="total">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="imgnike/re1.jpg" alt="Hình ảnh 1">
+                </div>
+                <div class="slide">
+                    <img src="imgnike/re2.jpg" alt="Hình ảnh 2">
+                </div>
+                <div class="slide">
+                    <img src="imgnike/re3.jpg" alt="Hình ảnh 3">
+                </div>
+                <div class="slide">
+                    <img src="imgnike/re4.jpg" alt="Hình ảnh 4">
+                </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+
+        </div>
+
+        <div class="price">
+            <h3>Giày Nike Air Jordan 1 Retro High</h3>
+            <p><del style="color: red;"> 2,800,000đ</del> &#8594; 1,500,000đ</p>
+            <div class="thong-bao">
+                <li id="tb1" type>
+                    <span id="tb1" class="true"> Trạng thái : Còn hàng, liên hệ Shop để check size tại cửa hàng.</span>
+                <li id="tb1" type>
+                    <span id="tb1" class="true"> Tình trạng : Hàng mới 100%.</span>
+                <li id="tb1" type>
+                    <span id="tb1" class="true"> Giao hàng & Thanh toán : Giao hàng trên toàn quốc và thanh toán khi
+                        nhận hàng, được đổi size trong vòng 7 ngày.</span>
+                <li id="tb1" type>
+                    <span id="tb1" class="true"> Sản phẩm được bảo hành 6 tháng lỗi do nhà sản xuất.</span>
+
+            </div>
+            <div class="frame">
+                <div class="size-container">
+                    <label for="shoe-size">Chọn kích cỡ giày:</label>
+                    <select id="shoe-size" name="shoe-size">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <!-- Thêm các tùy chọn kích cỡ khác nếu cần -->
+                    </select>
+                    <br>
+                    <input type="submit" value="Thêm vào giỏ hàng">
+                    <input type="submit" value="Mua ngay">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Đoạn mã JavaScript sẽ được chèn vào đây
+        const slider = document.querySelector(".slider");
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+
+        function showSlide(slideIndex) {
+            if (slideIndex < 0) {
+                currentSlide = slides.length - 1;
+            } else if (slideIndex >= slides.length) {
+                currentSlide = 0;
+            } else {
+                currentSlide = slideIndex;
+            }
+
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        showSlide(0);
+    </script>
+
+
+
+</body>
+<footer class="footer" style="background-image: url('image/br.png');">
+
+    <div class="footer-column">
+        <h4>GIỚI THIỆU</h4>
+        <p><a href="/gioi-thieu/"><span class="text">Về </span>chúng tôi</a></p>
+        <p><a href="/huong-dan-mua-hang/"><span class="text">Hướng dẫn mua hàng </span></a></p>
+        <p><a href="/chinh-sach-giao-hang/"><span class="text">Chính sách giao hàng </span></a></p>
+        <p><a href="/chinh-sach-doi-tra-hang"><span class="text">Chính sách đổi trả </span></a></p>
+        <p><a href="/chinh-sach-bao-hanh/"><span class="text">Chính sách bảo hành </span></a></p>
+        <p><a href="/chinh-sach-bao-mat"><span class="text">Chính sách bảo mật</span></a></p>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="footer-column">
+        <h5>THƯƠNG HIỆU</h5>
+        <p><a href="/Nike/"><span class="text"></span>Giày Nike</a></p>
+        <p><a href="/Adidas/"><span class="text">Giày Adidas</span></a></p>
+        <p><a href="/MLB/"><span class="text">Giày MLB </span></a></p>
+        <p><a href="/Converse"><span class="text">Giày Converse </span></a></p>
+        <p><a href="/Vans/"><span class="text">Giày Vans </span></a></p>
+
+    </div>
+    <div class="vertical-line"></div>
+    <div class="footer-column">
+        <h6>THÔNG TIN</h6>
+        <li>Địa chỉ: 548 Phạm Văn Đồng, phường 13, quận Bình Thạnh, TP.HCM</li>
+        <li>Hotline: 0342902951</li>
+        <li>Website: www.ultrasneaker93.com</li>
+        <div id="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8514510784294!2d106.70158597573632!3d10.82267795833746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752910825c6ab9%3A0xa1b250dc696376cb!2zQ2h1bmcgQ8awIDU0OCBQaOG6oW0gVsSDbiDEkOG7k25n!5e0!3m2!1svi!2s!4v1688212549814!5m2!1svi!2s"></iframe>
+        </div>
+    </div>
+</footer>
+
+</html>
